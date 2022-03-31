@@ -17,9 +17,6 @@
 
         public object? CreateInstance(params object[] parameters) 
         {
-            if (ImplementationFactory is not null) 
-                return ImplementationFactory();
-
             if (_isSingleton) 
             {
                 if (SingletonInstance is null)
