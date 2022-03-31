@@ -5,6 +5,8 @@ VisualStudioVersion = 17.0.32112.339
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendlyDIContainer", "FriendlyDIContainer\FriendlyDIContainer.csproj", "{AC68245D-13E2-48B8-B9A3-01AE24A6DB9E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FriendlyDIContainer.Test", "FriendlyDIContainer.Test\FriendlyDIContainer.Test.csproj", "{74EC645D-D91C-4834-BB76-C8F9F187D1B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{AC68245D-13E2-48B8-B9A3-01AE24A6DB9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AC68245D-13E2-48B8-B9A3-01AE24A6DB9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AC68245D-13E2-48B8-B9A3-01AE24A6DB9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74EC645D-D91C-4834-BB76-C8F9F187D1B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74EC645D-D91C-4834-BB76-C8F9F187D1B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74EC645D-D91C-4834-BB76-C8F9F187D1B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74EC645D-D91C-4834-BB76-C8F9F187D1B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,12 +15,14 @@
             ImplementationFactory = implementationFactory;
         }
 
-        public object? CreateInstance(params object[] parameters) 
+        public object CreateInstance(params object[] parameters) 
         {
             if (_isSingleton) 
             {
+                SingletonInstance = Activator.CreateInstance(ServiceType, parameters);
+
                 if (SingletonInstance is null)
-                    SingletonInstance = Activator.CreateInstance(ServiceType, parameters);
+                    throw new ArgumentNullException("Failed to create service instance");
 
                 return SingletonInstance;
             }
