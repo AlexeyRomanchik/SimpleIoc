@@ -8,30 +8,6 @@ namespace FriendlyDIContainer
 
         #region public methods
 
-        public void RegisterService<TInterfaceType, TInstanceType>(Func<object>? implementationFactory = null)  
-            where TInstanceType : class, TInterfaceType
-        {
-            RegisterService<TInterfaceType, TInstanceType>(false, implementationFactory);
-        }
-
-        public void RegisterService<TInstanceType>(Func<object>? implementationFactory = null)
-            where TInstanceType : class
-        {
-            RegisterService<TInstanceType, TInstanceType>(false, implementationFactory);
-        }
-
-        public void RegisterSingletonService<TInstanceType>(Func<object>? implementationFactory = null)
-            where TInstanceType : class
-        {
-            RegisterService<TInstanceType, TInstanceType>(true, implementationFactory);
-        }
-
-        public void RegisterSingletonService<TInterfaceType, TInstanceType>(Func<object>? implementationFactory = null)
-            where TInstanceType : class, TInterfaceType
-        {
-            RegisterService<TInstanceType, TInstanceType>(true, implementationFactory);
-        }
-
         public TInterface GetRequiredService<TInterface>() 
         {
             var serviceInstance =  ResolveService(typeof(TInterface));
@@ -39,16 +15,16 @@ namespace FriendlyDIContainer
             return (TInterface)serviceInstance;
         }
 
-        #endregion public methods
-
-        #region private methods
-
-        private void RegisterService<TInterfaceType, TInstanceType>(bool isSingleton = false,
+        internal void RegisterService<TInterfaceType, TInstanceType>(bool isSingleton = false,
             Func<object>? implementationFactory = null) where TInstanceType : class, TInterfaceType
         {
             _services.Add(typeof(TInterfaceType),
                           new Service(typeof(TInstanceType), isSingleton, implementationFactory));
         }
+
+        #endregion public methods
+
+        #region private methods
 
         private object ResolveService(Type type) 
         {

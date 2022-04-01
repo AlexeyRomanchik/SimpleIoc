@@ -4,12 +4,12 @@ using FriendlyDIContainer.Test.Services;
 
 var serviceProvider = new ServiceProvider();
 
-serviceProvider.RegisterService<ILogger, Logger>();
-serviceProvider.RegisterService<IDbConnector, DbConnector>(() => new DbConnector("localhost\\Sql"));
-serviceProvider.RegisterService<IRepository, Repository>();
-serviceProvider.RegisterService<INotifier, Notifier>();
-serviceProvider.RegisterService<ISerializer, Serializer>();
-serviceProvider.RegisterService<Manager>();
+serviceProvider.RegisterService<ILogger, Logger>()
+    .RegisterService<IDbConnector, DbConnector>(() => new DbConnector("localhost\\Sql"))
+    .RegisterService<IRepository, Repository>()
+    .RegisterService<INotifier, Notifier>()
+    .RegisterService<ISerializer, Serializer>()
+    .RegisterService<Manager>();
 
 var manager = serviceProvider.GetRequiredService<Manager>();
 
