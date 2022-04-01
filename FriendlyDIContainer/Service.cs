@@ -15,7 +15,7 @@
             ImplementationFactory = implementationFactory;
         }
 
-        public object CreateInstance(params object[] parameters) 
+        public object CreateInstance(params object?[]? parameters) 
         {
             if (_isSingleton) 
             {
