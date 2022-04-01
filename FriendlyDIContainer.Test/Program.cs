@@ -7,7 +7,7 @@ var serviceProvider = new ServiceProvider();
 serviceProvider.RegisterService<ILogger, Logger>()
     .RegisterService<IDbConnector, DbConnector>(() => new DbConnector("localhost\\Sql"))
     .RegisterService<IRepository, Repository>()
-    .RegisterService<INotifier, Notifier>()
+    .RegisterSingletonService<INotifier, Notifier>()
     .RegisterService<ISerializer, Serializer>()
     .RegisterService<Manager>();
 

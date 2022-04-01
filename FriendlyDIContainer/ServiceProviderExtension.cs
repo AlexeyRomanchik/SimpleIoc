@@ -30,7 +30,7 @@
             Func<object>? implementationFactory = null)
             where TInstanceType : class, TInterfaceType
         {
-            serviceProvider.RegisterService<TInstanceType, TInstanceType>(true, implementationFactory);
+            serviceProvider.RegisterService<TInterfaceType, TInstanceType>(true, implementationFactory);
             return serviceProvider;
         }
     }
